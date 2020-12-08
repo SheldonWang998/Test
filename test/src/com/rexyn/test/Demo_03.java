@@ -27,7 +27,7 @@ public class Demo_03 {
         thread1.start();
         // 创建线程池
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        execute();
+//        executorService.execute();
     }
 
     private static void execute() {
