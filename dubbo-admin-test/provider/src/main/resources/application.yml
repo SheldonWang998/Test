@@ -1,0 +1,13 @@
+server:
+  port: 9091
+dubbo:
+  application:
+    name: boot-service-provider
+  registry:
+    address: 144.55.92.208:2181
+    protocol: zookeeper
+  protocol:
+    name: dubbo
+    port: 20880
+  monitor:
+    protocol: registry
