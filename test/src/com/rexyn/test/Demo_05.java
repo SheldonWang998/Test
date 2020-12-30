@@ -4,7 +4,9 @@ import com.rexyn.test.model.Product;
 import com.rexyn.test.model.Tree;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @ClassName: Demo_05
@@ -28,13 +30,36 @@ public class Demo_05 {
         products.add(product4);
         products.add(product5);
         products.add(product6);
-        Product product = products.stream().min((o1, o2) -> {
-            if (o1.getPid() > o2.getPid()) return 1;
-            else if (o1.getPid() < o2.getPid()) return -1;
-            else return 0;
-        }).get();
+//        Product product = products.stream().min((o1, o2) -> {
+//            if (o1.getPid() > o2.getPid()) return 1;
+//            else if (o1.getPid() < o2.getPid()) return -1;
+//            else return 0;
+//        }).get();
+//        System.out.println(product);
+//        List<Product> build = Tree.build(products);
+//        System.out.println(build);
+
+
+//        products.sort(new Comparator<Product>() {
+//            @Override
+//            public int compare(Product o1, Product o2) {
+//                return o2.getId()-o1.getId();
+//            }
+//        });
+//        for (Product product : products) {
+//            System.out.println(product);
+//        }
+
+
+        List<Product> collect = products.stream().filter(
+                item -> item.getId() % 2 == 0
+        ).collect(Collectors.toList());
+        Product product = products.stream().filter(
+                item -> item.getId() % 3 > 1
+        ).min(
+                (item1, item2) -> item1.getId() - item2.getId()
+        ).get();
         System.out.println(product);
-        List<Product> build = Tree.build(products);
-        System.out.println(build);
+//        System.out.println(collect);
     }
 }
