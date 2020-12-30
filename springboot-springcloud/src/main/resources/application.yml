@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: payment-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/my_test_demo
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  type-aliases-package: com.rexyn.weifuwu.entity
+  mapper-locations: classpath:mapper/*.xml
