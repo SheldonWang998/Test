@@ -24,6 +24,11 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
             <exclusions>
@@ -71,7 +76,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.4.RELEASE</version>
                 <configuration>
-                    <mainClass>com.rexyn.eurekaclient.EurekaClientApplication</mainClass>
+                    <mainClass>com.rexyn.EurekaClientApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

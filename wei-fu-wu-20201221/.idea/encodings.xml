@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/api-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-eureka-service7001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-eureka-service7001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-eureka-service7002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-eureka-service7002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-order80/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/consumer-order80/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-payment8001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-payment8001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-payment8002/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/provider-payment8002/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-demo/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

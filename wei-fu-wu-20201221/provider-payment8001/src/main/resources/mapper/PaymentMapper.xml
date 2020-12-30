@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rexyn.weifuwu.mapper.PaymentMapper">
+
+
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment (serial) values (#{serial})
+    </insert>
+    <select id="getById" parameterType="java.lang.Long" resultType="java.lang.String">
+        select serial from payment where id = #{id}
+    </select>
+    <select id="list" resultType="com.rexyn.weifuwu.dto.PaymentDto">
+        select * from payment
+    </select>
+
+</mapper>
