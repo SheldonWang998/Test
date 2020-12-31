@@ -12,6 +12,7 @@
         <module name="cloud-eureka-service7001" />
         <module name="cloud-eureka-service7002" />
         <module name="consumer-order80" />
+        <module name="consumer-order-zk80" />
         <module name="api-common" />
         <module name="provider-payment8001" />
         <module name="provider-payment8003" />
