@@ -4,11 +4,9 @@ import com.rexyn.test.model.Product;
 import com.rexyn.test.model.Test_06;
 import com.rexyn.test.model.User;
 
-import static java.util.stream.IntStream.range;
-
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * @ClassName: Demo_06
@@ -17,13 +15,8 @@ import java.util.stream.IntStream;
  * @Description:
  */
 public class Demo_06 {
+    private static Logger logger = Logger.getGlobal();
     public static void main(String[] args) {
-//        List<Integer> list = range(1,100).boxed().collect(Collectors.toList());
-//        Set<Integer> set = new HashSet<>(list);
-//        Iterator<Integer> iterator = set.iterator();
-//        while (iterator.hasNext()){
-//            System.out.println(iterator.next());
-//        }
         List<Object> list = new ArrayList<>();
         User user = new User();
         user.setUsername("sheldon");
@@ -34,5 +27,11 @@ public class Demo_06 {
         list.add(product);
         String value = Test_06.getValue(list);
         System.out.println(value);
+        String s= "sheldon";
+        if(s.equals(user.getUsername())){
+            System.out.println(s);
+        }
+        logger.info(value);
+
     }
 }

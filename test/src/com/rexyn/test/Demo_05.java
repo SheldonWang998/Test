@@ -1,10 +1,8 @@
 package com.rexyn.test;
 
 import com.rexyn.test.model.Product;
-import com.rexyn.test.model.Tree;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,6 +36,8 @@ public class Demo_05 {
 //        System.out.println(product);
 //        List<Product> build = Tree.build(products);
 //        System.out.println(build);
+
+
 
 
 //        products.sort(new Comparator<Product>() {
