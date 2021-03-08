@@ -1,0 +1,24 @@
+
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(Ø¦ˆŞúÿÿÿÿ
+r
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(”îß¹ıÿÿÿÿ
+O	java:S125"<This block of commented-out lines of code should be removed.(¤³¢Ü
+r
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÓÜ‡ïıÿÿÿÿ
+O
+java:S1854";Remove this useless assignment to local variable "collect".(ºœ³ª
+J
+java:S3655"7Call "Optional#isPresent()" before accessing the value.(²àµ
+O	java:S125"<This block of commented-out lines of code should be removed.(ûÔ÷€
+@
+java:S1481",Remove this unused "collect" local variable.(ºœ³ª
+l
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒÚ€A
+r
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Êó²¥ıÿÿÿÿ
+r
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(‘š½Çøÿÿÿÿ
+e	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Òò¸‘øÿÿÿÿ
+m
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ö·‡
+T	java:S125"<This block of commented-out lines of code should be removed.(í§­Ãüÿÿÿÿ

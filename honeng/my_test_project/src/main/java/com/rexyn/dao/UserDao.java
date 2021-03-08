@@ -1,7 +1,10 @@
 package com.rexyn.dao;
 
+import com.rexyn.entity.TestXML;
 import com.rexyn.entity.User;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 /**
@@ -10,6 +13,7 @@ import java.util.List;
  * @author makejava
  * @since 2021-01-19 13:37:37
  */
+@Repository
 public interface UserDao {
 
     /**
@@ -61,5 +65,12 @@ public interface UserDao {
      * @return 影响行数
      */
     int deleteById(Integer id);
+
+
+
+
+
+
+    List<User> testxml(@Param("tx") TestXML tx);
 
 }

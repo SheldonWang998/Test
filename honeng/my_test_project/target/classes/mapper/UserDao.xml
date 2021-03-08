@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rexyn.dao.UserDao">
+
+    <resultMap id="BaseResultMap" type="com.rexyn.entity.User">
+        <!--@Table user-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select id,
+               username,
+               age,
+               address,
+               sex
+        from my_test_demo.user
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select id,
+               username,
+               age,
+               address,
+               sex
+        from my_test_demo.user
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+        id, username, age, address, sex
+        from my_test_demo.user
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="username != null and username != ''">
+                and username = #{username}
+            </if>
+            <if test="age != null">
+                and age = #{age}
+            </if>
+            <if test="address != null and address != ''">
+                and address = #{address}
+            </if>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+        </where>
+        order by age,username
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into my_test_demo.user(username, age, address, sex)
+        values (#{username}, #{age}, #{address}, #{sex})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update my_test_demo.user
+        <set>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="address != null and address != ''">
+                address = #{address},
+            </if>
+            <if test="sex != null and sex != ''">
+                sex = #{sex},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from my_test_demo.user
+        where id = #{id}
+    </delete>
+    <select id="testxml" parameterType="com.rexyn.entity.TestXML" resultMap="BaseResultMap">
+        select * from my_test_demo.user
+        <where>
+            <if test="tx.id != null and tx.id != ''">
+                id >= #{tx.id}
+            </if>
+            <if test="tx.testList != null">
+                and
+                <foreach item="testList" index="index" collection="tx.testList" open="(" close=")" separator="or">
+                    <foreach collection="tx.testList[index]" index="a" item="b" separator="and">
+                        <if test="a == 0">
+                            age &gt;= #{b}
+                        </if>
+                        <if test="a == 1">
+                           age &lt;= #{b}
+                        </if>
+                    </foreach>
+
+                </foreach>
+            </if>
+        </where>
+        <if test="tx.orderBy != null">
+            order by
+            <foreach item="orderBy" collection="tx.orderBy.split(',')" separator=",">
+                #{orderBy}
+            </foreach>
+        </if>
+
+    </select>
+</mapper>

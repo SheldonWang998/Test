@@ -1,11 +1,13 @@
 package com.rexyn.service.impl;
 
-import com.rexyn.entity.User;
 import com.rexyn.dao.UserDao;
+import com.rexyn.entity.TestXML;
+import com.rexyn.entity.User;
 import com.rexyn.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +16,7 @@ import java.util.List;
  * @author makejava
  * @since 2021-01-19 13:37:39
  */
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
     @Resource
     private UserDao userDao;
@@ -75,5 +77,24 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean deleteById(Integer id) {
         return this.userDao.deleteById(id) > 0;
+    }
+
+    @Override
+    public List<User> testxml() {
+        TestXML tx = new TestXML();
+        tx.setId(5);
+        tx.setOrderBy("age,username");
+        List<List<Integer>> list = new ArrayList<>();
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(5);
+        list1.add(10);
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(35);
+        list2.add(40);
+        list.add(list1);
+        list.add(list2);
+        tx.setTestList(list);
+        System.out.println(list);
+        return this.userDao.testxml(tx);
     }
 }

@@ -1,0 +1,14 @@
+
+|
+java:S1149L"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰8”’Î„/
+c	java:S899:"BDo something with the "boolean" value returned by "createNewFile".(Ğ’Íùÿÿÿÿ8ì£¼„/
+^
+java:S10754"ARefactor your code to get this URI from a customizable parameter.( º±ó8·«»„/
+i
+java:S2095<"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(£İÅ½8·«»„/
+n
+java:S2095J"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(¹®Ùœÿÿÿÿÿ8”’Î„/
+]	java:S125"<This block of commented-out lines of code should be removed.(‡Ï›ƒûÿÿÿÿ8È÷í„/
+U	java:S106^"9Replace this use of System.out or System.err by a logger.(¤™ï×8ëÄ·/
+V
+java:S4719<"9Replace charset name argument with StandardCharsets.UTF_8(£İÅ½8©Œíœ/

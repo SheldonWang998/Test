@@ -1,0 +1,43 @@
+{
+  "name" : "ImportHa",
+  "originTableName" : "import_ha",
+  "comment" : "小区信息表",
+  "fullColumn" : [ {
+    "name" : "communilyId",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "communilyName",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "String",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "lon",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "Float",
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "lat",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "ktShortType" : "Float",
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.ccb.hlsp.suzhou",
+  "savePath" : "./src/main/java/com/ccb/hlsp/suzhou",
+  "saveModelName" : "my_test_project"
+}
