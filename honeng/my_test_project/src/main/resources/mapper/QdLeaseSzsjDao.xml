@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rexyn.dao.QdLeaseSzsjDao">
+
+    <resultMap id="BaseResultMap" type="com.rexyn.entity.QdLeaseSzsj">
+        <!--@Table qd_lease_szsj-->
+        <result property="fwId" column="FW_ID" jdbcType="VARCHAR"/>
+        <result property="ptCode" column="PT_CODE" jdbcType="VARCHAR"/>
+        <result property="ptName" column="PT_NAME" jdbcType="VARCHAR"/>
+        <result property="ptfwId" column="PTFW_ID" jdbcType="VARCHAR"/>
+        <result property="distinctName" column="DISTINCT_NAME" jdbcType="VARCHAR"/>
+        <result property="regionName" column="REGION_NAME" jdbcType="VARCHAR"/>
+        <result property="communilyId" column="COMMUNILY_ID" jdbcType="VARCHAR"/>
+        <result property="communilyName" column="COMMUNILY_NAME" jdbcType="VARCHAR"/>
+        <result property="zuoluo" column="ZUOLUO" jdbcType="VARCHAR"/>
+        <result property="lon" column="LON" jdbcType="OTHER"/>
+        <result property="lat" column="LAT" jdbcType="OTHER"/>
+        <result property="title" column="TITLE" jdbcType="VARCHAR"/>
+        <result property="leixing" column="LEIXING" jdbcType="VARCHAR"/>
+        <result property="rentWay" column="RENT_WAY" jdbcType="VARCHAR"/>
+        <result property="square" column="SQUARE" jdbcType="OTHER"/>
+        <result property="rentPrice" column="RENT_PRICE" jdbcType="OTHER"/>
+        <result property="houseType" column="HOUSE_TYPE" jdbcType="VARCHAR"/>
+        <result property="detaiipageUrl" column="DETAIIPAGE_URL" jdbcType="VARCHAR"/>
+        <result property="cyrybh" column="CYRYBH" jdbcType="VARCHAR"/>
+        <result property="status" column="STATUS" jdbcType="VARCHAR"/>
+        <result property="heyanId" column="HEYAN_ID" jdbcType="VARCHAR"/>
+        <result property="updateTime" column="UPDATE_TIME" jdbcType="OTHER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          FW_ID, PT_CODE, PT_NAME, PTFW_ID, DISTINCT_NAME, REGION_NAME, COMMUNILY_ID, COMMUNILY_NAME, ZUOLUO, LON, LAT, TITLE, LEIXING, RENT_WAY, SQUARE, RENT_PRICE, HOUSE_TYPE, DETAIIPAGE_URL, CYRYBH, STATUS, HEYAN_ID, UPDATE_TIME
+        from my_test_demo.qd_lease_szsj
+        where FW_ID = #{fwId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          FW_ID, PT_CODE, PT_NAME, PTFW_ID, DISTINCT_NAME, REGION_NAME, COMMUNILY_ID, COMMUNILY_NAME, ZUOLUO, LON, LAT, TITLE, LEIXING, RENT_WAY, SQUARE, RENT_PRICE, HOUSE_TYPE, DETAIIPAGE_URL, CYRYBH, STATUS, HEYAN_ID, UPDATE_TIME
+        from my_test_demo.qd_lease_szsj
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          FW_ID, PT_CODE, PT_NAME, PTFW_ID, DISTINCT_NAME, REGION_NAME, COMMUNILY_ID, COMMUNILY_NAME, ZUOLUO, LON, LAT, TITLE, LEIXING, RENT_WAY, SQUARE, RENT_PRICE, HOUSE_TYPE, DETAIIPAGE_URL, CYRYBH, STATUS, HEYAN_ID, UPDATE_TIME
+        from my_test_demo.qd_lease_szsj
+        <where>
+            <if test="fwId != null and fwId != ''">
+                and FW_ID = #{fwId}
+            </if>
+            <if test="ptCode != null and ptCode != ''">
+                and PT_CODE = #{ptCode}
+            </if>
+            <if test="ptName != null and ptName != ''">
+                and PT_NAME = #{ptName}
+            </if>
+            <if test="ptfwId != null and ptfwId != ''">
+                and PTFW_ID = #{ptfwId}
+            </if>
+            <if test="distinctName != null and distinctName != ''">
+                and DISTINCT_NAME = #{distinctName}
+            </if>
+            <if test="regionName != null and regionName != ''">
+                and REGION_NAME = #{regionName}
+            </if>
+            <if test="communilyId != null and communilyId != ''">
+                and COMMUNILY_ID = #{communilyId}
+            </if>
+            <if test="communilyName != null and communilyName != ''">
+                and COMMUNILY_NAME = #{communilyName}
+            </if>
+            <if test="zuoluo != null and zuoluo != ''">
+                and ZUOLUO = #{zuoluo}
+            </if>
+            <if test="lon != null">
+                and LON = #{lon}
+            </if>
+            <if test="lat != null">
+                and LAT = #{lat}
+            </if>
+            <if test="title != null and title != ''">
+                and TITLE = #{title}
+            </if>
+            <if test="leixing != null and leixing != ''">
+                and LEIXING = #{leixing}
+            </if>
+            <if test="rentWay != null and rentWay != ''">
+                and RENT_WAY = #{rentWay}
+            </if>
+            <if test="square != null">
+                and SQUARE = #{square}
+            </if>
+            <if test="rentPrice != null">
+                and RENT_PRICE = #{rentPrice}
+            </if>
+            <if test="houseType != null and houseType != ''">
+                and HOUSE_TYPE = #{houseType}
+            </if>
+            <if test="detaiipageUrl != null and detaiipageUrl != ''">
+                and DETAIIPAGE_URL = #{detaiipageUrl}
+            </if>
+            <if test="cyrybh != null and cyrybh != ''">
+                and CYRYBH = #{cyrybh}
+            </if>
+            <if test="status != null and status != ''">
+                and STATUS = #{status}
+            </if>
+            <if test="heyanId != null and heyanId != ''">
+                and HEYAN_ID = #{heyanId}
+            </if>
+            <if test="updateTime != null">
+                and UPDATE_TIME = #{updateTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="fwId" useGeneratedKeys="true">
+        insert into my_test_demo.qd_lease_szsj(PT_CODE, PT_NAME, PTFW_ID, DISTINCT_NAME, REGION_NAME, COMMUNILY_ID, COMMUNILY_NAME, ZUOLUO, LON, LAT, TITLE, LEIXING, RENT_WAY, SQUARE, RENT_PRICE, HOUSE_TYPE, DETAIIPAGE_URL, CYRYBH, STATUS, HEYAN_ID, UPDATE_TIME)
+        values (#{ptCode}, #{ptName}, #{ptfwId}, #{distinctName}, #{regionName}, #{communilyId}, #{communilyName}, #{zuoluo}, #{lon}, #{lat}, #{title}, #{leixing}, #{rentWay}, #{square}, #{rentPrice}, #{houseType}, #{detaiipageUrl}, #{cyrybh}, #{status}, #{heyanId}, #{updateTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update my_test_demo.qd_lease_szsj
+        <set>
+            <if test="ptCode != null and ptCode != ''">
+                PT_CODE = #{ptCode},
+            </if>
+            <if test="ptName != null and ptName != ''">
+                PT_NAME = #{ptName},
+            </if>
+            <if test="ptfwId != null and ptfwId != ''">
+                PTFW_ID = #{ptfwId},
+            </if>
+            <if test="distinctName != null and distinctName != ''">
+                DISTINCT_NAME = #{distinctName},
+            </if>
+            <if test="regionName != null and regionName != ''">
+                REGION_NAME = #{regionName},
+            </if>
+            <if test="communilyId != null and communilyId != ''">
+                COMMUNILY_ID = #{communilyId},
+            </if>
+            <if test="communilyName != null and communilyName != ''">
+                COMMUNILY_NAME = #{communilyName},
+            </if>
+            <if test="zuoluo != null and zuoluo != ''">
+                ZUOLUO = #{zuoluo},
+            </if>
+            <if test="lon != null">
+                LON = #{lon},
+            </if>
+            <if test="lat != null">
+                LAT = #{lat},
+            </if>
+            <if test="title != null and title != ''">
+                TITLE = #{title},
+            </if>
+            <if test="leixing != null and leixing != ''">
+                LEIXING = #{leixing},
+            </if>
+            <if test="rentWay != null and rentWay != ''">
+                RENT_WAY = #{rentWay},
+            </if>
+            <if test="square != null">
+                SQUARE = #{square},
+            </if>
+            <if test="rentPrice != null">
+                RENT_PRICE = #{rentPrice},
+            </if>
+            <if test="houseType != null and houseType != ''">
+                HOUSE_TYPE = #{houseType},
+            </if>
+            <if test="detaiipageUrl != null and detaiipageUrl != ''">
+                DETAIIPAGE_URL = #{detaiipageUrl},
+            </if>
+            <if test="cyrybh != null and cyrybh != ''">
+                CYRYBH = #{cyrybh},
+            </if>
+            <if test="status != null and status != ''">
+                STATUS = #{status},
+            </if>
+            <if test="heyanId != null and heyanId != ''">
+                HEYAN_ID = #{heyanId},
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME = #{updateTime},
+            </if>
+        </set>
+        where FW_ID = #{fwId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from my_test_demo.qd_lease_szsj where FW_ID = #{fwId}
+    </delete>
+
+</mapper>
