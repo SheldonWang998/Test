@@ -1,0 +1,5 @@
+
+_
+java:S1128"BRemove this unused import 'org.activiti.engine.RepositoryService'.(√è©—8æ„πï§/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(°åïº8Æ„¿Ù£/
+X	java:S125"<This block of commented-out lines of code should be removed.(æÓŒÏ8˚ﬂäó§/
