@@ -99,7 +99,7 @@
             <if test="tx.testList != null">
                 and
                 <foreach item="testList" index="index" collection="tx.testList" open="(" close=")" separator="or">
-                    <foreach collection="tx.testList[index]" index="a" item="b" separator="and">
+                    <foreach collection="tx.testList[index]" index="a" item="b" open="(" close=")" separator="and">
                         <if test="a == 0">
                             age &gt;= #{b}
                         </if>
@@ -107,7 +107,6 @@
                            age &lt;= #{b}
                         </if>
                     </foreach>
-
                 </foreach>
             </if>
         </where>

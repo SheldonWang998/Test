@@ -23,6 +23,4 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.sheldon.entity  #所有entity别名所在包
-logging:
-  level: debug
+  type-aliases-package: com.example.demo1.com.sheldon.mapper  #所有entity别名所在包
