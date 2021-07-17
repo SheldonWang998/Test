@@ -21,6 +21,7 @@ public class ThreadService {
                     js = true;
                     System.out.println("我是正常结束");
                 } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         };
@@ -32,8 +33,8 @@ public class ThreadService {
         long currentTimeMillis = System.currentTimeMillis();
         //结束标志一直没有结束，才主动去关闭线程
         while (!js) {
-        //没有超时，一直等待，直到超时才结束
-            if((System.currentTimeMillis()-currentTimeMillis)>time){
+            //没有超时，一直等待，直到超时才结束
+            if ((System.currentTimeMillis() - currentTimeMillis) > time) {
                 System.out.println("已经超时了，主动结束");
                 zxThread.interrupt();
                 System.out.println("执行线程被打断");

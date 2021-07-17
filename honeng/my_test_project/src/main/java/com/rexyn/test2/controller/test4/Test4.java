@@ -10,10 +10,10 @@ public class Test4 {
         long start = System.currentTimeMillis();
         ThreadService ts = new ThreadService();
         ts.execute(()->{
-            // while (true){
-            //     System.out.println("我是一个死循环");
-            // }
-            System.out.println("我是一个");
+            while (true){
+                System.out.println("我是一个死循环");
+            }
+            // System.out.println("我是一个");
         });
         ts.shutDown(3000L);
         System.out.println("关闭线程结束");

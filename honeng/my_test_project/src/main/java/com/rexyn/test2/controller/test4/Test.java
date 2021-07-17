@@ -4,12 +4,13 @@ package com.rexyn.test2.controller.test4;
  * @date 2021/7/9 19:02
  * 中断线程的方式1
  */
-public class Test  {
-    private static class worker extends Thread{
+public class Test {
+    private static class worker extends Thread {
         private static volatile boolean flag = true;
+
         @Override
         public void run() {
-            while (flag){
+            while (flag) {
                 //模拟线程执行任务
                 try {
                     System.out.println(Thread.currentThread().getName());
@@ -19,7 +20,8 @@ public class Test  {
                 }
             }
         }
-        void shutDown(){
+
+        void shutDown() {
             System.out.println("关闭线程");
             flag = false;
         }
